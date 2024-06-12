@@ -10,23 +10,23 @@ def index(request):
 
 
 def edit_memo(request, item_id):
-    instance_to_edit = get_object_or_404(Memo, pk=item_id)
+    memo = get_object_or_404(Memo, pk=item_id)
     if request.method == 'POST':
-        form = MemoForm(request.POST, instance=instance_to_edit)
+        form = MemoForm(request.POST, instance=memo)
         if form.is_valid():
             form.save()
             return redirect('memos')
     else:
-        form = MemoForm(instance=item)
+        form = MemoForm(instance=memo)
     return render(request, '01_pages/edit_memo.html', {'form': form})
 
 
 def delete_memo(request, item_id):
-    item = get_object_or_404(Memo, pk=item_id)
+    memo = get_object_or_404(Memo, pk=item_id)
     if request.method == 'POST':
-        item.delete()
+        memo.delete()
         return redirect('memos')
-    return render(request, '01_pages/delete_memo.html', {'item': item})
+    return render(request, '01_pages/delete_memo.html', {'item': memo})
 
 
 def create_memo(request):
