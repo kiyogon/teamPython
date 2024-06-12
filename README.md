@@ -1,17 +1,17 @@
-# 動作確認
+# 動作確認方法
 
-## Dockerを立ち上げる
-docker-compose up --build
+## ①Dockerを立ち上げる
+`docker-compose up --build`
 
-Dockerコンテナを停止・削除するには
-docker-compose down
+補足：Dockerコンテナを停止・削除するには
+`docker-compose down`
 
-## 初回起動時にテーブルを作成する
-docker-compose exec web python manage.py makemigrations
-docker-compose exec web python manage.py migrate
+## ②初回起動時にテーブルを作成する
+`docker-compose exec web python manage.py makemigrations`
+`docker-compose exec web python manage.py migrate`
 
 
-## 動作確認
+## ④動作確認
 ブラウザで画面を表示する
 http://127.0.0.1:8000/
 をブラウザに打ち込みロード
