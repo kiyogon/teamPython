@@ -1,14 +1,22 @@
 # 動作確認方法
 
-## ①Dockerを立ち上げる
+## ①Dockerコンテナを立ち上げる
+
+下記をターミナルで実行
+
 `docker-compose up --build`
 
 補足：Dockerコンテナを停止・削除するには
 `docker-compose down`
 
 ## ②初回起動時にテーブルを作成する
+
+下記をターミナルで実行
+
+1. マイグレーションファイルの作成
 `docker-compose exec web python manage.py makemigrations`
 
+2. マイグレーション
 `docker-compose exec web python manage.py migrate`
 
 
