@@ -8,6 +8,7 @@
 
 ## ②初回起動時にテーブルを作成する
 `docker-compose exec web python manage.py makemigrations`
+
 `docker-compose exec web python manage.py migrate`
 
 
