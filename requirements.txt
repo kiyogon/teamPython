@@ -1,0 +1,5 @@
+Django
+django-allauth
+django-allauth-ui
+psycopg2-binary
+django-environ
